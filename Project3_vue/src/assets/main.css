@@ -4,8 +4,14 @@
 body{
   width: 100%;
   min-height: 100vh;
-  background: rgb(234,168,131);
-  background: linear-gradient(165deg, rgba(234,168,131,1) 10%, rgba(255,255,255,1) 90%);
+
+  background: whitesmoke;
+  
+  display: flex;
+  flex-direction:column;
+}
+#app{
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
