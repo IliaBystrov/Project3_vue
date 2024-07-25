@@ -3,6 +3,7 @@
   <main>
     <p>123</p>
   </main>
+  
   <footer_comp></footer_comp>
 </template>
 
