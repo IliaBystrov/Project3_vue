@@ -1,7 +1,7 @@
 <template>
   <header_comp :show_all="show_all" :show_films="show_films" :show_serials="show_serials" :show_cartoons="show_cartoons"></header_comp>
-  <main>
-    <p>123</p>
+  <main @load="default_load()">
+    <card v-for="(el, i) in cards" :index="i" :el_c="el"/>
   </main>
   
   <footer_comp></footer_comp>
@@ -18,48 +18,57 @@ import Header_comp from './components/header_comp.vue';
       return{
         data_list: [
         {
+        id:0,
         name:"Сверхестественное",
-        logo:"/card_img/supernatural.jpg",
+        logo:"/src/card_img/supernatural.jpg",
 			  type:"serial"
       },
 		  {
+        id:2,
 		    name:"Во все тяжкие",
-        logo:"/card_img/season-2.jpg",
+        logo:"/src/card_img/season-2.jpg",
 			  type:"serial"
 		  },
 		  {
+        id:3,
 		    name:"Уэйн",
-        logo:"/card_img/yein.jpg",
+        logo:"/src/card_img/yein.jpg",
 			  type:"serial"
 		  },
 		  {
+        id:4,
 		    name:"Пацаны",
-        logo:"/card_img/the_boys.jpg",
+        logo:"/src/card_img/the_boys.jpg",
 			  type:"serial"
 		  },
 		  {
+        id:5,
 		    name:"Кунгфу панда 4",
-        logo:"/card_img/panda.jpg",
+        logo:"/src/card_img/panda.jpg",
 			  type:"cartoon"
 		  },
 		  {
+        id:6,
 		    name:"Неуйзвимий",
-        logo:"/card_img/Invincible.jpg",
+        logo:"/src/card_img/Invincible.jpg",
 			  type:"cartoon"
 		  },
 		  {
+        id:7,
 		    name:"Не шутите с Зоханом",
-        logo:"/card_img/zohan.jpg",
+        logo:"/src/card_img/zohan.jpg",
 			  type:"film"
 		  },
 		  {
+        id:8,
 		    name:"Стекло",
-        logo:"/card_img/steklo.jpg",
+        logo:"/src/card_img/steklo.jpg",
 			  type:"film"
 		  },
 		  {
+        id:9,
 		    name:"ВСЕГДА ГОВОРИ ДА",
-        logo:"/card_img/yes.jpg",
+        logo:"/src/card_img/yes.jpg",
 			  type:"film"
 		  }
     ],
@@ -80,7 +89,11 @@ import Header_comp from './components/header_comp.vue';
         console.log('Show Cartoons');
       },
       show_all(){
+        this.cards = this.data_list;
         console.log('Show ALL');
+      },
+      default_load(){
+        this.cards = this.data_list;
       }
     }
   } 
