@@ -1,7 +1,7 @@
 <template>
   <header_comp :show_all="show_all" :show_films="show_films" :show_serials="show_serials" :show_cartoons="show_cartoons"></header_comp>
-  <main @load="default_load()">
-    <card v-for="(el, i) in cards" :index="i" :el_c="el"/>
+  <main>
+    <card v-for="(el, i) in cards" :key="el.id" :index="i" :el_c="el"/>
   </main>
   
   <footer_comp></footer_comp>
@@ -81,21 +81,36 @@ import Header_comp from './components/header_comp.vue';
     methods: {
       show_films(){
         console.log('Show Films');
+        this.cards = [];
+        for(var i=0; i<this.data_list.length; i++){
+          if(this.data_list[i].type=="film"){
+            this.cards.push(this.data_list[i]);
+          }
+        }
       },
       show_serials(){
         console.log('Show Serials');
+        this.cards = [];
+        for(var i=0; i<this.data_list.length; i++){
+          if(this.data_list[i].type=="serial"){
+            this.cards.push(this.data_list[i]);
+          }
+        }
       },
       show_cartoons(){
         console.log('Show Cartoons');
+        this.cards = [];
+        for(var i=0; i<this.data_list.length; i++){
+          if(this.data_list[i].type=="cartoon"){
+            this.cards.push(this.data_list[i]);
+          }
+        }
+        this.$forceUpdate();
       },
       show_all(){
         this.cards = this.data_list;
-        console.log('Show ALL');
       },
-      default_load(){
-        this.cards = this.data_list;
-      }
-    }
+    },
   } 
 </script>
 

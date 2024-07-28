@@ -1,6 +1,6 @@
 <template>
     <div class="header_comp">
-        <img src="/src/img/logo.png" class="logo" @click="show_all()">
+        <img src="/src/img/logo.png" class="logo" @click="show_all()" v-on:load="show_all()">
         <h1 @click="show_all()">Кино-Сериалы-Мультики</h1>
 
         <div class="btn_block">
