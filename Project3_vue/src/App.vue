@@ -118,6 +118,7 @@ import Header_comp from './components/header_comp.vue';
 main{
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
 </style>
