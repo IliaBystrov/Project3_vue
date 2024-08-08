@@ -5,10 +5,7 @@
             <img v-bind:src="imageUrl" class="card_img"/>
         </div>
         <div class="about">
-            <p>
-                Описание. 
-                10100101001010101001010111101010101001010010101010101010101010101010
-            </p>
+            <p>{{ item_info.info }}</p>
         </div>
     </div>
     <div class="item_content">
