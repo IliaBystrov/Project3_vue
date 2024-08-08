@@ -1,5 +1,5 @@
 <template>
-  <div class="card_info" :key="index" @click="open_page(el_c.id)">
+  <div class="card_info" :key="index" @click="show_item(el_c.id)">
     <img v-bind:src="imageUrl" class="card_img"/>
     <p>{{ el_c.name }}</p>
   </div>
@@ -15,16 +15,15 @@
       index:{
         type: Number,
         requared: true
+      },
+      show_item:{
+        type:Function,
+        requared:true
       }
     },
     data(){
       return{
         imageUrl: this.el_c.logo
-      }
-    },
-    methods:{
-      open_page(id){
-        console.log(id);
       }
     }
   } 
